@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{url_for('static',filename='img/home-bg.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>{{params['blog_name']}} देसी !</h1>
+            <span class="subheading">A Blog by sameer srivastava</span>
+
+            <!-- Button trigger modal -->
+            <hr>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Latest News
+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Webinar : Project to Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+       <b> “Technology is not just a tool, it can give learners a voice that they may not have had before”.</b>
+<br>
+Are you bored of Quarantine? Don't know what to do? Are you confused to decide what is the right path for your career? Then use this Quarantine time to mould yourself into the technology which is a perfect pair to your knowledge. Script Foundation in association with IEEE DITU and Smart Joules Pvt. Ltd. brings you a Webinar - <br><b> 'Project To Product '</b> 
+<br><br> <b>Date : 17th May 2020.</b>
+<br><b>Timings : 5:00 pm - 6:00 pm</b>
+
+      </div>
+      <div class="modal-footer">
+        <a href="https://qrgo.page.link/wXbGB" target="_blank" ><button type="button" class="btn btn-primary">Register</button></a>
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <!--to do using for loop so that content comes from database-->
+
+        {% for post in posts %}
+       
+
+        <div class="post-preview">
+          <a href="/post/{{post.slug}}">
+            <h2 class="post-title">
+              
+              {{ post.title }}
+
+            </h2>
+            <h3 class="post-subtitle">
+              {{post.tagline}}
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="/about">Admin</a>
+            on {{post.date}}</p>
+        </div>
+        {{post.content[0:100]}}....
+        <hr>
+
+        {% endfor %}
+        </li></a>
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="{{next}}">Older Posts &rarr;</a>
+          <a class="btn btn-primary float-left" href="{{prev}}">&larr; New Posts </a>
+        </div>
+      </div>
+
+        
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+ 

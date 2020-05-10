@@ -1,0 +1,23 @@
+{
+  "params":
+  {
+    "local_server" : "True",
+    "local_uri" : "postgres://ekrfejllfdenbv:2c875bb92f7e7ba7c1985f5e6a4bb882eb207c32c20a3ba42212e81b6df265b5@ec2-34-195-169-25.compute-1.amazonaws.com:5432/dfte93m0ipf0t5" ,
+    "prod_uri" : "postgres://ekrfejllfdenbv:2c875bb92f7e7ba7c1985f5e6a4bb882eb207c32c20a3ba42212e81b6df265b5@ec2-34-195-169-25.compute-1.amazonaws.com:5432/dfte93m0ipf0t5",
+    "fb_url" : "https://www.instagram.com/hebetheguy13/",
+    "tw_url" : "https://www.linkedin.com/in/sameer-srivastava-134694164",
+    "gt_url" : "https://github.com/keepitdesi.com",
+    "blog_name" : "Keep it ",
+    "site_name" : "Sameer's Blog",
+    "copyright" : "Superstar Sameer's Company 2020",
+    "no_of_posts" : 2,
+    "login_img" : "login_image.png",
+    "Admin_user" : "sameer",
+    "Admin_pass" : "donut"
+
+
+
+
+   }
+
+}
