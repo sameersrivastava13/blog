@@ -1,6 +1,7 @@
+import os
 from flask import Flask,render_template,request,session,redirect
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine
+
 from datetime import datetime
 import json
 #from flask_mail import Mail
@@ -25,11 +26,10 @@ app.secret_key = "super-secret-key"
 )
 mail=Mail(app)"""
 
-engine = create_engine('postgres://ekrfejllfdenbv:2c875bb92f7e7ba7c1985f5e6a4bb882eb207c32c20a3ba42212e81b6df265b5@ec2-34-195-169-25.compute-1.amazonaws.com:5432/dfte93m0ipf0t5')
-engine.connect()
+
 
 if local_server:
-    app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']   #'mysql://root:@localhost/flask'
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')  #'mysql://root:@localhost/flask'
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = params['prod_uri']
 
